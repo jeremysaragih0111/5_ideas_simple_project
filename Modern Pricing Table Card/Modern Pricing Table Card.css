@@ -1,0 +1,435 @@
+/* ============================================
+   RESET & GLOBAL
+============================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Palet warna */
+  --bg: #0b1020;
+  --bg-soft: #121a33;
+  --surface: #141b2f;
+  --text: #e6ebf5;
+  --muted: #8b96b0;
+  --border: rgba(255, 255, 255, 0.08);
+
+  /* Aksen */
+  --accent-1: #6366f1;
+  --accent-2: #22d3ee;
+  --accent-3: #a855f7;
+  --accent-glow: rgba(99, 102, 241, 0.35);
+
+  /* Radius & spacing */
+  --radius: 20px;
+  --radius-pill: 999px;
+  --gap: 1.75rem;
+
+  /* Transisi */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --speed: 0.35s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(99, 102, 241, 0.15), transparent 60%),
+    radial-gradient(1000px 500px at 100% 0%, rgba(168, 85, 247, 0.12), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.25rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================
+   WRAPPER
+============================================ */
+.pricing {
+  width: 100%;
+  max-width: 1140px;
+  margin-inline: auto;
+}
+
+/* ============================================
+   HEADER
+============================================ */
+.pricing__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3.5rem;
+}
+
+.pricing__eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  background: rgba(34, 211, 238, 0.1);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.25rem;
+}
+
+.pricing__title {
+  font-size: clamp(1.75rem, 3.2vw + 1rem, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  background: linear-gradient(180deg, #ffffff 0%, #b9c2d8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.85rem;
+}
+
+.pricing__subtitle {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* ============================================
+   GRID RESPONSIF
+============================================ */
+.pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--gap);
+  align-items: stretch;
+}
+
+/* ============================================
+   KARTU
+============================================ */
+.card {
+  position: relative;
+  border-radius: var(--radius);
+  isolation: isolate;
+  transition: transform var(--speed) var(--ease);
+  will-change: transform;
+}
+
+/* Animated gradient border (menggunakan pseudo layer) */
+.card__border {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.04) 40%,
+    rgba(255, 255, 255, 0.12)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  transition: background var(--speed) var(--ease);
+}
+
+/* Hover: scale + shadow */
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.card:hover .card__border {
+  background: linear-gradient(
+    120deg,
+    var(--accent-1),
+    var(--accent-2),
+    var(--accent-3),
+    var(--accent-1)
+  );
+  background-size: 300% 300%;
+  animation: border-flow 4s linear infinite;
+}
+
+.card:hover .card__content {
+  box-shadow:
+    0 24px 48px -20px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+/* Konten kartu */
+.card__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem 1.75rem;
+  background: linear-gradient(180deg, var(--surface) 0%, var(--bg-soft) 100%);
+  border-radius: inherit;
+  box-shadow: 0 12px 28px -18px rgba(0, 0, 0, 0.55);
+  transition: box-shadow var(--speed) var(--ease);
+}
+
+/* ============================================
+   KARTU POPULAR
+============================================ */
+.card--popular {
+  transform: translateY(-10px) scale(1.03);
+  z-index: 1;
+}
+
+.card--popular:hover {
+  transform: translateY(-16px) scale(1.05);
+}
+
+/* Border gradient default animasi untuk popular */
+.card--popular .card__border {
+  background: linear-gradient(
+    120deg,
+    var(--accent-1),
+    var(--accent-2),
+    var(--accent-3),
+    var(--accent-1)
+  );
+  background-size: 300% 300%;
+  animation: border-flow 6s linear infinite;
+}
+
+.card--popular .card__content {
+  box-shadow:
+    0 30px 60px -25px var(--accent-glow),
+    0 0 0 1px rgba(99, 102, 241, 0.15) inset;
+}
+
+/* Badge MOST POPULAR */
+.card__badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 0.4rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0b1020;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent-1));
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 20px -8px var(--accent-glow);
+  white-space: nowrap;
+}
+
+/* ============================================
+   ISI KARTU
+============================================ */
+.card__head {
+  margin-bottom: 1.5rem;
+}
+
+.card__name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.35rem;
+}
+
+.card__desc {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* Harga */
+.card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+.card__currency {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--muted);
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.card__amount {
+  font-size: clamp(2.5rem, 4vw + 1rem, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  background: linear-gradient(180deg, #ffffff, #b9c2d8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card__unit {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card__unit > span {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* Fitur */
+.card__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.card__features li {
+  position: relative;
+  padding-left: 1.75rem;
+  font-size: 0.93rem;
+  color: #c9d2e6;
+}
+
+.card__features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.35), transparent 60%),
+    linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.35);
+}
+
+.card__features li::after {
+  content: "";
+  position: absolute;
+  left: 5.5px;
+  top: 50%;
+  width: 4px;
+  height: 8px;
+  border-right: 2px solid #0b1020;
+  border-bottom: 2px solid #0b1020;
+  transform: translateY(-65%) rotate(45deg);
+}
+
+/* ============================================
+   TOMBOL
+============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  transition:
+    background var(--speed) var(--ease),
+    border-color var(--speed) var(--ease),
+    color var(--speed) var(--ease),
+    transform var(--speed) var(--ease),
+    box-shadow var(--speed) var(--ease);
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--primary {
+  color: #ffffff;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-3));
+  border: none;
+  box-shadow: 0 10px 24px -10px var(--accent-glow);
+}
+
+.btn--primary:hover {
+  background: linear-gradient(90deg, var(--accent-3), var(--accent-1));
+  box-shadow: 0 14px 32px -10px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+}
+
+/* ============================================
+   ANIMASI
+============================================ */
+@keyframes border-flow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================================
+   RESPONSIF
+============================================ */
+@media (max-width: 720px) {
+  body {
+    padding: 3rem 1rem;
+  }
+
+  .pricing__grid {
+    gap: 2.5rem;
+  }
+
+  .card--popular,
+  .card--popular:hover {
+    transform: none;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Aksesibilitas: kurangi animasi */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card__border,
+  .btn {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .card:hover,
+  .card--popular:hover {
+    transform: none;
+  }
+}

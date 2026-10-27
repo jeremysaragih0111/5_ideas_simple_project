@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Login · SaaS aesthetic</title>
+  <link rel="stylesheet" href="Modern Login Page.css">
+</head>
+<body>
+  <div class="login-card">
+
+    <!-- ========== HEADER ========== -->
+    <div class="login-header">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1>Welcome back</h1>
+      <p>Log in to your SaaS workspace</p>
+    </div>
+
+    <!-- ========== FORM (UI only, no backend) ========== -->
+    <form class="login-form" action="#" method="post" novalidate>
+
+      <!-- Email with floating label -->
+      <div class="input-group">
+        <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required>
+        <label for="email">Email address</label>
+      </div>
+
+      <!-- Password with floating label -->
+      <div class="input-group">
+        <input type="password" id="password" name="password" placeholder=" " autocomplete="current-password" required>
+        <label for="password">Password</label>
+      </div>
+
+      <!-- Remember me & forgot password -->
+      <div class="form-options">
+        <label class="checkbox-label">
+          <input type="checkbox" name="remember" checked>
+          <span>Remember me</span>
+        </label>
+        <a href="#" class="forgot-link">Forgot password?</a>
+      </div>
+
+      <!-- Gradient button -->
+      <button type="submit" class="btn-gradient">Log in</button>
+    </form>
+
+    <!-- ========== SIGN UP PROMPT ========== -->
+    <div class="signup-prompt">
+      Don’t have an account? <a href="#">Sign up</a>
+    </div>
+
+  </div>
+</body>
+</html>

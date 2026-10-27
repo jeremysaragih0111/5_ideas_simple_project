@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Pricing Cards</title>
+  <link rel="stylesheet" href="Modern Pricing Table Card.css" />
+</head>
+<body>
+  <main class="pricing">
+    <!-- Header -->
+    <header class="pricing__header">
+      <span class="pricing__eyebrow">Harga Transparan</span>
+      <h1 class="pricing__title">Pilih Paket yang Cocok untukmu</h1>
+      <p class="pricing__subtitle">
+        Tanpa biaya tersembunyi. Batalkan kapan saja.
+      </p>
+    </header>
+
+    <!-- Grid Kartu -->
+    <section class="pricing__grid" aria-label="Daftar paket harga">
+      <!-- Kartu 1: Starter -->
+      <article class="card">
+        <div class="card__border" aria-hidden="true"></div>
+        <div class="card__content">
+          <header class="card__head">
+            <h2 class="card__name">Starter</h2>
+            <p class="card__desc">Untuk personal yang baru memulai.</p>
+          </header>
+
+          <div class="card__price">
+            <span class="card__currency">Rp</span>
+            <span class="card__amount">49</span>
+            <span class="card__unit">rb<span>/bln</span></span>
+          </div>
+
+          <ul class="card__features">
+            <li>10 GB penyimpanan</li>
+            <li>2 proyek aktif</li>
+            <li>Dukungan email</li>
+            <li>Akses fitur dasar</li>
+          </ul>
+
+          <a href="#" class="btn">Mulai Gratis</a>
+        </div>
+      </article>
+
+      <!-- Kartu 2: Pro (MOST POPULAR) -->
+      <article class="card card--popular">
+        <span class="card__badge">MOST POPULAR</span>
+        <div class="card__border" aria-hidden="true"></div>
+        <div class="card__content">
+          <header class="card__head">
+            <h2 class="card__name">Pro</h2>
+            <p class="card__desc">Untuk profesional &amp; freelancer.</p>
+          </header>
+
+          <div class="card__price">
+            <span class="card__currency">Rp</span>
+            <span class="card__amount">129</span>
+            <span class="card__unit">rb<span>/bln</span></span>
+          </div>
+
+          <ul class="card__features">
+            <li>100 GB penyimpanan</li>
+            <li>Proyek tak terbatas</li>
+            <li>Dukungan prioritas</li>
+            <li>Analitik lanjutan</li>
+            <li>Integrasi API</li>
+          </ul>
+
+          <a href="#" class="btn btn--primary">Coba 14 Hari</a>
+        </div>
+      </article>
+
+      <!-- Kartu 3: Enterprise -->
+      <article class="card">
+        <div class="card__border" aria-hidden="true"></div>
+        <div class="card__content">
+          <header class="card__head">
+            <h2 class="card__name">Enterprise</h2>
+            <p class="card__desc">Untuk tim &amp; organisasi besar.</p>
+          </header>
+
+          <div class="card__price">
+            <span class="card__currency">Rp</span>
+            <span class="card__amount">349</span>
+            <span class="card__unit">rb<span>/bln</span></span>
+          </div>
+
+          <ul class="card__features">
+            <li>Penyimpanan tak terbatas</li>
+            <li>Kolaborasi tim</li>
+            <li>Dukungan 24/7</li>
+            <li>SSO &amp; keamanan lanjutan</li>
+            <li>Kustomisasi SLA</li>
+          </ul>
+
+          <a href="#" class="btn">Hubungi Sales</a>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
