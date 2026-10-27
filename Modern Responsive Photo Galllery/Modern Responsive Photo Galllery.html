@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Explore a futuristic neon photo gallery featuring digital art, architecture, nature, and urban photography."
+  >
+
+  <meta name="theme-color" content="#080b14">
+
+  <title>Visual Beyond — Neon Photo Gallery</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="Modern Responsive Photo Galllery.css">
+</head>
+
+<body>
+  <div class="ambient ambient--one" aria-hidden="true"></div>
+  <div class="ambient ambient--two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="logo" href="#home" aria-label="Visual Beyond home">
+      <span class="logo__icon">✳</span>
+      <span>VISUAL<span class="text-neon">.</span></span>
+    </a>
+
+    <nav class="navigation" aria-label="Main navigation">
+      <a class="navigation__link navigation__link--active" href="#home">
+        Home
+      </a>
+      <a class="navigation__link" href="#gallery">
+        Gallery
+      </a>
+      <a class="navigation__link" href="#about">
+        About
+      </a>
+    </nav>
+
+    <a class="header-cta" href="#gallery">
+      Explore <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          DIGITAL ART & PHOTOGRAPHY
+        </p>
+
+        <h1>
+          VISUAL<br>
+          <span class="hero__title-accent">BEYOND</span>
+          <span class="hero__period">.</span>
+        </h1>
+
+        <p class="hero__description">
+          A curated collection of extraordinary moments,
+          futuristic landscapes, and visual experiments
+          beyond the ordinary.
+        </p>
+
+        <div class="hero__actions">
+          <a class="button button--primary" href="#gallery">
+            Explore Gallery <span aria-hidden="true">↘</span>
+          </a>
+
+          <a class="button button--ghost" href="#about">
+            Discover More
+          </a>
+        </div>
+
+        <div class="hero__stats">
+          <div>
+            <strong>08</strong>
+            <span>ARTWORKS</span>
+          </div>
+          <div class="stats-divider"></div>
+          <div>
+            <strong>04</strong>
+            <span>COLLECTIONS</span>
+          </div>
+          <div class="stats-divider"></div>
+          <div>
+            <strong>∞</strong>
+            <span>IMAGINATION</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="orbit orbit--outer"></div>
+        <div class="orbit orbit--inner"></div>
+
+        <div class="hero__image">
+          <img
+            src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=1000&q=85"
+            alt=""
+            fetchpriority="high"
+          >
+        </div>
+
+        <span class="hero__visual-label">
+          FIG. 001 / BEYOND EARTH
+        </span>
+
+        <span class="floating-tag floating-tag--top">
+          <span class="status-dot"></span>
+          VISUAL SYSTEM ONLINE
+        </span>
+
+        <span class="floating-tag floating-tag--bottom">
+          35° 41' 22.2"N
+        </span>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION / 001—008</p>
+          <h2>Selected <span class="text-neon">Frames.</span></h2>
+        </div>
+
+        <p class="section-heading__note">
+          Eight frames. Endless perspectives.
+        </p>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid">
+
+        <article class="gallery-card gallery-card--tall">
+          <a
+            class="gallery-card__link"
+            href="#view-01"
+            aria-label="View Neon City artwork"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85"
+              alt="Atmospheric night sky above a dramatic landscape"
+              loading="lazy"
+            >
+
+            <span class="gallery-card__number">01 / 08</span>
+            <span class="gallery-card__category">ATMOSPHERE</span>
+
+            <div class="gallery-card__info">
+              <div>
+                <p>01 — NIGHTSCAPE</p>
+                <h3>Neon City</h3>
+              </div>
+              <span class="gallery-card__arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="gallery-card">
+          <a class="gallery-card__link" href="#view-02"
+             aria-label="View Deep Space artwork">
+            <img
+              src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1000&q=85"
+              alt="Colorful nebula and stars in deep space"
+              loading="lazy"
+            >
+
+            <span class="gallery-card__number">02 / 08</span>
+            <span class="gallery-card__category">COSMOS</span>
+
+            <div class="gallery-card__info">
+              <div>
+                <p>02 — THE UNIVERSE</p>
+                <h3>Deep Space</h3>
+              </div>
+              <span class="gallery-card__arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="gallery-card">
+          <a class="gallery-card__link" href="#view-03"
+             aria-label="View Blue Horizon artwork">
+            <img
+              src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=85"
+              alt="Blue ocean waves and the horizon"
+              loading="lazy"
+            >
+
+            <span class="gallery-card__number">03 / 08</span>
+            <span class="gallery-card__category">NATURE</span>
+
+            <div class="gallery-card__info">
+              <div>
+                <p>03 — OPEN WATERS</p>
+                <h3>Blue Horizon</h3>
+              </div>
+              <span class="gallery-card__arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="gallery-card gallery-card--wide">
+          <a class="gallery-card__link" href="#view-04"
+             aria-label="View Urban Pulse artwork">
+            <img
+              src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1400&q=85"
+              alt="City buildings illuminated during the night"
+              loading="lazy"
+            >
+
+            <span class="gallery-card__number">04 / 08</span>
+            <span class="gallery-card__category">URBAN</span>
+
+            <div class="gallery-card__info">
+              <div>
+                <p>04 — CITY LIGHTS</p>
+                <h3>Urban Pulse</h3>
+              </div>
+              <span class="gallery-card__arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="gallery-card">
+          <a class="gallery-card__link" href="#view-05"
+             aria-label="View Golden Hour artwork">
+            <img
+              src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=85"
+              alt="Golden sunlight spreading across a misty landscape"
+              loading="lazy"
+            >
+
+            <span class="gallery-card__number">05 / 08</span>
+            <span class="gallery-card__category">LANDSCAPE</span>
+
+            <div class="gallery-card__info">
+              <div>
+                <p>05 — NATURAL LIGHT</p>
+                <h3>Golden Hour</h3>
+              </div>
+              <span class="gallery-card__arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="gallery-card">
+          <a class="gallery-card__link" href="#view-06"
+             aria-label="View Abstract Flow artwork">
+            <img
+              src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1000&q=85"
+              alt="Abstract colorful lights and geometric visual forms"
+              loading="lazy"
+            >
+
+            <span class="gallery-card__number">06 / 08</span>
+            <span class="gallery-card__category">ABSTRACT</span>
+
+            <div class="gallery-card__info">
+              <div>
+                <p>06 — COLOR THEORY</p>
+                <h3>Abstract Flow</h3>
+              </div>
+              <span class="gallery-card__arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="gallery-card gallery-card--wide">
+          <a class="gallery-card__link" href="#view-07"
+             aria-label="View Mountain Echo artwork">
+            <img
+              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85"
+              alt="Majestic mountain peaks under dramatic light"
+              loading="lazy"
+            >
+
+            <span class="gallery-card__number">07 / 08</span>
+            <span class="gallery-card__category">WILDERNESS</span>
+
+            <div class="gallery-card__info">
+              <div>
+                <p>07 — HIGH ALTITUDE</p>
+                <h3>Mountain Echo</h3>
+              </div>
+              <span class="gallery-card__arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="gallery-card">
+          <a class="gallery-card__link" href="#view-08"
+             aria-label="View Silent Geometry artwork">
+            <img
+              src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1000&q=85"
+              alt="Minimal modern architecture with clean geometric lines"
+              loading="lazy"
+            >
+
+            <span class="gallery-card__number">08 / 08</span>
+            <span class="gallery-card__category">ARCHITECTURE</span>
+
+            <div class="gallery-card__info">
+              <div>
+                <p>08 — MODERN FORMS</p>
+                <h3>Silent Geometry</h3>
+              </div>
+              <span class="gallery-card__arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+      </div>
+
+      <p class="gallery-note">
+        ✦ Select any frame to open the enlarged image.
+      </p>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-section__icon" aria-hidden="true">✳</div>
+
+      <div class="about-section__content">
+        <p class="eyebrow">BEHIND THE PIXELS</p>
+        <h2>Art has no <span class="text-neon">boundaries.</span></h2>
+        <p>
+          Visual Beyond is a digital gallery celebrating the
+          intersection of photography, imagination, and
+          futuristic design. Every frame captures a different
+          perspective of the world around us.
+        </p>
+      </div>
+
+      <a class="button button--primary" href="#home">
+        Back to Top ↑
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="logo logo--footer" href="#home">
+      <span class="logo__icon">✳</span>
+      VISUAL<span class="text-neon">.</span>
+    </a>
+
+    <p>DESIGNED BEYOND THE ORDINARY.</p>
+
+    <p>© 2026 VISUAL BEYOND</p>
+  </footer>
+
+  <!-- CSS-only lightboxes: no JavaScript required -->
+
+  <div class="lightbox" id="view-01">
+    <a class="lightbox__backdrop" href="#gallery"
+       aria-label="Close enlarged image"></a>
+    <div class="lightbox__content" role="group"
+         aria-label="Neon City enlarged image">
+      <a class="lightbox__close" href="#gallery"
+         aria-label="Close">×</a>
+      <img
+        src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1600&q=90"
+        alt="Atmospheric night sky above a dramatic landscape"
+      >
+      <p>01 / 08 — NIGHTSCAPE</p>
+    </div>
+  </div>
+
+  <div class="lightbox" id="view-02">
+    <a class="lightbox__backdrop" href="#gallery"
+       aria-label="Close enlarged image"></a>
+    <div class="lightbox__content" role="group"
+         aria-label="Deep Space enlarged image">
+      <a class="lightbox__close" href="#gallery"
+         aria-label="Close">×</a>
+      <img
+        src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1600&q=90"
+        alt="Colorful nebula and stars in deep space"
+      >
+      <p>02 / 08 — COSMOS</p>
+    </div>
+  </div>
+
+  <div class="lightbox" id="view-03">
+    <a class="lightbox__backdrop" href="#gallery"
+       aria-label="Close enlarged image"></a>
+    <div class="lightbox__content" role="group"
+         aria-label="Blue Horizon enlarged image">
+      <a class="lightbox__close" href="#gallery"
+         aria-label="Close">×</a>
+      <img
+        src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1600&q=90"
+        alt="Blue ocean waves and the horizon"
+      >
+      <p>03 / 08 — NATURE</p>
+    </div>
+  </div>
+
+  <div class="lightbox" id="view-04">
+    <a class="lightbox__backdrop" href="#gallery"
+       aria-label="Close enlarged image"></a>
+    <div class="lightbox__content" role="group"
+         aria-label="Urban Pulse enlarged image">
+      <a class="lightbox__close" href="#gallery"
+         aria-label="Close">×</a>
+      <img
+        src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=90"
+        alt="City buildings illuminated during the night"
+      >
+      <p>04 / 08 — URBAN</p>
+    </div>
+  </div>
+
+  <div class="lightbox" id="view-05">
+    <a class="lightbox__backdrop" href="#gallery"
+       aria-label="Close enlarged image"></a>
+    <div class="lightbox__content" role="group"
+         aria-label="Golden Hour enlarged image">
+      <a class="lightbox__close" href="#gallery"
+         aria-label="Close">×</a>
+      <img
+        src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1600&q=90"
+        alt="Golden sunlight spreading across a misty landscape"
+      >
+      <p>05 / 08 — LANDSCAPE</p>
+    </div>
+  </div>
+
+  <div class="lightbox" id="view-06">
+    <a class="lightbox__backdrop" href="#gallery"
+       aria-label="Close enlarged image"></a>
+    <div class="lightbox__content" role="group"
+         aria-label="Abstract Flow enlarged image">
+      <a class="lightbox__close" href="#gallery"
+         aria-label="Close">×</a>
+      <img
+        src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1600&q=90"
+        alt="Abstract colorful lights and geometric visual forms"
+      >
+      <p>06 / 08 — ABSTRACT</p>
+    </div>
+  </div>
+
+  <div class="lightbox" id="view-07">
+    <a class="lightbox__backdrop" href="#gallery"
+       aria-label="Close enlarged image"></a>
+    <div class="lightbox__content" role="group"
+         aria-label="Mountain Echo enlarged image">
+      <a class="lightbox__close" href="#gallery"
+         aria-label="Close">×</a>
+      <img
+        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=90"
+        alt="Majestic mountain peaks under dramatic light"
+      >
+      <p>07 / 08 — WILDERNESS</p>
+    </div>
+  </div>
+
+  <div class="lightbox" id="view-08">
+    <a class="lightbox__backdrop" href="#gallery"
+       aria-label="Close enlarged image"></a>
+    <div class="lightbox__content" role="group"
+         aria-label="Silent Geometry enlarged image">
+      <a class="lightbox__close" href="#gallery"
+         aria-label="Close">×</a>
+      <img
+        src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1600&q=90"
+        alt="Minimal modern architecture with clean geometric lines"
+      >
+      <p>08 / 08 — ARCHITECTURE</p>
+    </div>
+  </div>
+
+</body>
+</html>
