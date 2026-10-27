@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Table · Grid & Toggle</title>
+  <link rel="stylesheet" href="Pricing Table Card.css" />
+</head>
+<body>
+  <section class="pricing-section">
+    <!-- Header + Toggle -->
+    <header class="pricing-header">
+      <h2>Pilih Paket Digital Anda</h2>
+      <p>Mulai dari kebutuhan personal hingga tim enterprise</p>
+
+      <div class="toggle-container">
+        <span id="labelBulanan" class="toggle-label active">Bulanan</span>
+        <button
+          id="toggleSwitch"
+          class="toggle-switch"
+          data-period="bulanan"
+          role="switch"
+          aria-checked="false"
+          aria-label="Toggle periode harga"
+        ></button>
+        <span id="labelTahunan" class="toggle-label">
+          Tahunan
+          <span class="toggle-badge">hemat 20%</span>
+        </span>
+      </div>
+    </header>
+
+    <!-- Grid Paket -->
+    <div class="pricing-grid">
+      <!-- Paket 1: Basic -->
+      <article class="pricing-card">
+        <header class="card-header">
+          <h3>Basic</h3>
+          <p>Untuk personal & eksplorasi</p>
+        </header>
+
+        <div class="price-container">
+          <span class="price-currency">Rp</span>
+          <span class="price-amount" data-monthly="49.000" data-annual="39.000">49.000</span>
+          <span class="price-period">/bulan</span>
+        </div>
+        <div class="annual-note" id="noteBasic"></div>
+
+        <ul class="features">
+          <li>10 GB penyimpanan</li>
+          <li>2 proyek aktif</li>
+          <li>Dukungan email</li>
+          <li>Akses fitur dasar</li>
+        </ul>
+
+        <button class="btn">Mulai gratis</button>
+      </article>
+
+      <!-- Paket 2: Pro (POPULAR) -->
+      <article class="pricing-card popular">
+        <div class="badge-popular">Paling Populer</div>
+
+        <header class="card-header">
+          <h3>Pro</h3>
+          <p>Untuk profesional & freelancer</p>
+        </header>
+
+        <div class="price-container">
+          <span class="price-currency">Rp</span>
+          <span class="price-amount" data-monthly="129.000" data-annual="103.000">129.000</span>
+          <span class="price-period">/bulan</span>
+        </div>
+        <div class="annual-note" id="notePro"></div>
+
+        <ul class="features">
+          <li>100 GB penyimpanan</li>
+          <li>Proyek tak terbatas</li>
+          <li>Dukungan prioritas</li>
+          <li>Analitik lanjutan</li>
+          <li>Integrasi API</li>
+        </ul>
+
+        <button class="btn btn-primary">Coba 14 hari</button>
+      </article>
+
+      <!-- Paket 3: Enterprise -->
+      <article class="pricing-card">
+        <header class="card-header">
+          <h3>Enterprise</h3>
+          <p>Untuk tim & organisasi</p>
+        </header>
+
+        <div class="price-container">
+          <span class="price-currency">Rp</span>
+          <span class="price-amount" data-monthly="349.000" data-annual="279.000">349.000</span>
+          <span class="price-period">/bulan</span>
+        </div>
+        <div class="annual-note" id="noteEnterprise"></div>
+
+        <ul class="features">
+          <li>Penyimpanan tak terbatas</li>
+          <li>Kolaborasi tim</li>
+          <li>Dukungan 24/7</li>
+          <li>SSO & keamanan lanjutan</li>
+          <li>Kustomisasi SLA</li>
+        </ul>
+
+        <button class="btn">Hubungi sales</button>
+      </article>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
