@@ -1,0 +1,367 @@
+/* ============================================================
+   1. RESET & GLOBAL
+   ============================================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* --- Palet warna SaaS --- */
+  --bg-page: #f7f9fc;
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #5e6f8b;
+  --border-light: #e2e8f0;
+  --primary: #4f46e5;
+  --primary-light: #6366f1;
+  --accent: #8b5cf6;
+  --gradient-start: #4f46e5;
+  --gradient-end: #8b5cf6;
+
+  /* --- Shadow & radius --- */
+  --shadow-sm: 0 10px 25px -5px rgba(0,0,0,0.05),
+               0 8px 10px -6px rgba(0,0,0,0.02);
+  --shadow-focus: 0 0 0 4px rgba(99,102,241,0.15);
+  --radius-card: 2rem;
+  --radius-input: 1rem;
+
+  /* --- Transisi --- */
+  --transition: all 0.2s ease;
+}
+
+/* ============================================================
+   2. BODY / LAYOUT HALAMAN
+   ============================================================ */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont,
+               'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg-page);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(99,102,241,0.03) 0%, transparent 30%),
+    radial-gradient(circle at 90% 80%, rgba(139,92,246,0.03) 0%, transparent 30%);
+}
+
+/* ============================================================
+   3. KARTU LOGIN
+   ============================================================ */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  padding: 2.5rem 2rem 2.25rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(2px);
+  transition: var(--transition);
+}
+
+/* ============================================================
+   4. HEADER (logo + judul)
+   ============================================================ */
+.login-header {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.login-header .logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 16px -6px rgba(79,70,229,0.3);
+}
+
+.login-header .logo svg {
+  width: 26px;
+  height: 26px;
+  stroke: white;
+  stroke-width: 2;
+  fill: none;
+}
+
+.login-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
+}
+
+.login-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   5. FORM & FLOATING LABEL (INTI)
+   ============================================================ */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  position: relative;      /* jangkar untuk label absolute */
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1.1rem 1.25rem 0.65rem 1.25rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-main);
+  background: #ffffff;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-input);
+  outline: none;
+  transition: var(--transition);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+/* Label "mengambang" di atas input */
+.input-group label {
+  position: absolute;
+  left: 1.25rem;
+  top: 1.05rem;
+  font-size: 1rem;
+  color: #94a3b8;
+  pointer-events: none;
+  transition: var(--transition);
+  background: transparent;
+  padding: 0 0.25rem;
+  transform-origin: left top;
+}
+
+/* Efek float saat input fokus ATAU berisi teks */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+  transform: translateY(-0.7rem) scale(0.8);
+  color: var(--primary);
+  font-weight: 500;
+  background: var(--bg-card);
+  padding: 0 0.35rem;
+  left: 0.95rem;
+  top: 0.6rem;
+  border-radius: 4px;
+}
+
+/* Efek fokus input */
+.input-group input:focus {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-focus);
+}
+
+/* :focus-visible — untuk keyboard navigation */
+.input-group input:focus-visible {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-focus),
+              0 0 0 2px #ffffff,
+              0 0 0 4px var(--primary);
+}
+
+/* Hover halus (hanya di perangkat dengan mouse) */
+@media (hover: hover) {
+  .input-group input:hover:not(:focus) {
+    border-color: #cbd5e1;
+  }
+}
+
+/* ============================================================
+   6. REMEMBER ME & FORGOT PASSWORD
+   ============================================================ */
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-top: -0.25rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  font-weight: 450;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--primary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.checkbox-label input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.forgot-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 0.2rem 0.1rem;
+  border-radius: 6px;
+}
+
+.forgot-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.forgot-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   7. TOMBOL GRADIENT
+   ============================================================ */
+.btn-gradient {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: white;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border: none;
+  border-radius: var(--radius-input);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 8px 18px -8px rgba(79,70,229,0.4);
+  letter-spacing: 0.3px;
+  margin-top: 0.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (hover: hover) {
+  .btn-gradient:hover {
+    background: linear-gradient(135deg, #4338ca, #7c3aed);
+    box-shadow: 0 12px 22px -8px rgba(79,70,229,0.5);
+    transform: scale(1.01);
+  }
+}
+
+.btn-gradient:active {
+  transform: scale(0.99);
+  box-shadow: 0 4px 12px -6px rgba(79,70,229,0.4);
+}
+
+/* Fokus keyboard untuk tombol */
+.btn-gradient:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.8),
+              0 0 0 7px var(--primary);
+}
+
+/* ============================================================
+   8. SIGN UP PROMPT
+   ============================================================ */
+.signup-prompt {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 1.75rem;
+}
+
+.signup-prompt a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  padding: 0.2rem 0.2rem;
+  border-radius: 6px;
+}
+
+.signup-prompt a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.signup-prompt a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   9. RESPONSIF
+   ============================================================ */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+
+  .login-card {
+    padding: 2rem 1.5rem 1.75rem;
+    border-radius: 1.75rem;
+  }
+
+  .login-header h1 { font-size: 1.55rem; }
+
+  .input-group input {
+    padding: 1rem 1rem 0.55rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .input-group label {
+    left: 1rem;
+    top: 0.95rem;
+    font-size: 0.95rem;
+  }
+
+  .input-group input:focus ~ label,
+  .input-group input:not(:placeholder-shown) ~ label {
+    left: 0.75rem;
+    transform: translateY(-0.65rem) scale(0.78);
+  }
+
+  .form-options {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+/* ============================================================
+   10. ACCESSIBILITY — reduced motion & placeholder
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+input::placeholder {
+  color: transparent;
+  user-select: none;
+}
